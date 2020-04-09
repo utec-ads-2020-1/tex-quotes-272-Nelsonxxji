@@ -5,22 +5,26 @@ using namespace std;
 
 int main()
 {
-    string line;
+    string line, output;
     int quoteCounter = 1;
 
     while (getline(cin, line, '\"'))
     {
-        cout << line;
+        output.append(line);
         if (quoteCounter % 2 == 0)
         {
-            cout << "\'\'";
+            output.append("\'\'");
         }
         else
         {
-            cout << "``";
+            output.append("``");
         }
-        quoteCounter++;  
+        quoteCounter++;
     }
-    cout << endl;
+    if(*output.end() != '\"'){
+        output.pop_back();
+        output.pop_back();
+    }
+    cout << output << endl;
     return EXIT_SUCCESS;
 }
