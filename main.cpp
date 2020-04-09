@@ -25,6 +25,6 @@ int main()
         output.pop_back();
         output.pop_back();
     }
-    cout << output << endl;
+    cout << output;
     return EXIT_SUCCESS;
 }
